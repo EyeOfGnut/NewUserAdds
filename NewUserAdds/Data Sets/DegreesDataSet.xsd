@@ -1,0 +1,71 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DegreesDataSet" targetNamespace="http://tempuri.org/DegreesDataSet.xsd" xmlns:mstns="http://tempuri.org/DegreesDataSet.xsd" xmlns="http://tempuri.org/DegreesDataSet.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="UserAddDBConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="UserAddDBConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.NewUserAdds.Properties.Settings.GlobalReference.Default.UserAddDBConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="DegreesTableAdapter" GeneratorDataComponentClassName="DegreesTableAdapter" Name="Degrees" UserDataComponentName="DegreesTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="UserAddDBConnectionString (Settings)" DbObjectName="UserAddDb.dbo.Degrees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Degree, JobCategory, ID FROM dbo.Degrees</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Degree" DataSetColumn="Degree" />
+              <Mapping SourceColumn="JobCategory" DataSetColumn="JobCategory" />
+              <Mapping SourceColumn="ID" DataSetColumn="ID" />
+            </Mappings>
+            <Sources>
+              <DbSource ConnectionRef="UserAddDBConnectionString (Settings)" DbObjectName="UserAddDb.dbo.Degrees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillLHP" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetLHP" GeneratorSourceName="FillLHP" GetMethodModifier="Public" GetMethodName="GetLHP" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetLHP" UserSourceName="FillLHP">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Degree, ID, JobCategory FROM Degrees WHERE JobCategory = 150 Order By Degree</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="UserAddDBConnectionString (Settings)" DbObjectName="UserAddDb.dbo.Degrees" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillMD" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetMD" GeneratorSourceName="FillMD" GetMethodModifier="Public" GetMethodName="GetMD" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetMD" UserSourceName="FillMD">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT Degree, ID, JobCategory FROM Degrees WHERE JobCategory = 160 Order By Degree</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DegreesDataSet" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="True" msprop:Generator_DataSetName="DegreesDataSet" msprop:Generator_UserDSName="DegreesDataSet">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="Degrees" msprop:Generator_TableClassName="DegreesDataTable" msprop:Generator_TableVarName="tableDegrees" msprop:Generator_RowChangedName="DegreesRowChanged" msprop:Generator_TablePropName="Degrees" msprop:Generator_RowDeletingName="DegreesRowDeleting" msprop:Generator_RowChangingName="DegreesRowChanging" msprop:Generator_RowEvHandlerName="DegreesRowChangeEventHandler" msprop:Generator_RowDeletedName="DegreesRowDeleted" msprop:Generator_RowClassName="DegreesRow" msprop:Generator_UserTableName="Degrees" msprop:Generator_RowEvArgName="DegreesRowChangeEvent">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Degree" msprop:Generator_ColumnVarNameInTable="columnDegree" msprop:Generator_ColumnPropNameInRow="Degree" msprop:Generator_ColumnPropNameInTable="DegreeColumn" msprop:Generator_UserColumnName="Degree">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="10" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="JobCategory" msprop:Generator_ColumnVarNameInTable="columnJobCategory" msprop:Generator_ColumnPropNameInRow="JobCategory" msprop:Generator_ColumnPropNameInTable="JobCategoryColumn" msprop:Generator_UserColumnName="JobCategory" type="xs:short" />
+              <xs:element name="ID" msdata:ReadOnly="true" msdata:AutoIncrement="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnID" msprop:Generator_ColumnPropNameInRow="ID" msprop:Generator_ColumnPropNameInTable="IDColumn" msprop:Generator_UserColumnName="ID" type="xs:int" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>

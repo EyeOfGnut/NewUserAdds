@@ -1,0 +1,63 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="NewUserAdds.Properties" GeneratedClassName="Settings">
+  <Profiles />
+  <Settings>
+    <Setting Name="LastSSN" Type="System.String" Scope="User">
+      <Value Profile="(Default)">0</Value>
+    </Setting>
+    <Setting Name="MainWindowLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="LogWindowLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="PendingUsersLocation" Type="System.Drawing.Point" Scope="User">
+      <Value Profile="(Default)">0, 0</Value>
+    </Setting>
+    <Setting Name="intSigFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="extSigFile" Type="System.String" Scope="User">
+      <Value Profile="(Default)" />
+    </Setting>
+    <Setting Name="orderingServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">FHS7/CHIW</Value>
+    </Setting>
+    <Setting Name="addsServer" Type="System.String" Scope="User">
+      <Value Profile="(Default)">fhs7.axolotl.com</Value>
+    </Setting>
+    <Setting Name="DataSource" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">NWTACFHIE1</Value>
+    </Setting>
+    <Setting Name="RawDataCatalog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">RawData</Value>
+    </Setting>
+    <Setting Name="UserAddCatalog" Type="System.String" Scope="Application">
+      <Value Profile="(Default)">UserAddDb</Value>
+    </Setting>
+    <Setting Name="UserAddDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=NWTACFHIE1;Initial Catalog=UserAddDb;Integrated Security=True&lt;/ConnectionString&gt;
+  &lt;ProviderName&gt;System.Data.SqlClient&lt;/ProviderName&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=NWTACFHIE1;Initial Catalog=UserAddDb;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="RawDataDBConnectionString" Type="(Connection string)" Scope="Application">
+      <DesignTimeValue Profile="(Default)">&lt;?xml version="1.0" encoding="utf-16"?&gt;
+&lt;SerializableConnectionString xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema"&gt;
+  &lt;ConnectionString&gt;Data Source=NWTACFHIE1;Initial Catalog=RawData;Integrated Security=True&lt;/ConnectionString&gt;
+&lt;/SerializableConnectionString&gt;</DesignTimeValue>
+      <Value Profile="(Default)">Data Source=NWTACFHIE1;Initial Catalog=RawData;Integrated Security=True</Value>
+    </Setting>
+    <Setting Name="ExternalCoordinator" Description="External Access Coordinator, to recieve copies of notificaiton emails. Use their entry in the GAL." Type="System.String" Scope="User">
+      <Value Profile="(Default)">Jones, Janice (Tacoma)</Value>
+    </Setting>
+    <Setting Name="IntContactNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">(179-6120)</Value>
+    </Setting>
+    <Setting Name="ExtContactNumber" Type="System.String" Scope="User">
+      <Value Profile="(Default)">253-779-6120</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

@@ -1,0 +1,12 @@
+WEB
+1
+http://providerinfo/_vti_bin/owssvr.dll?CS=1252&XMLDATA=1&List=u_Providers&View={79A39B03-3459-4824-BBE6-655A1C14E992}&RowLimit=0
+
+Selection=u_Providers-{79A39B03-3459-4824-BBE6-655A1C14E992}
+EditWebPage=http://providerinfo/_vti_bin/owssvr.dll?Using=Lists%2fProviders%2fElysium%20View%2ehtm
+Formatting=None
+PreFormattedTextToColumns=True
+ConsecutiveDelimitersAsOne=True
+SingleBlockTextImport=False
+DisableDateRecognition=False
+DisableRedirections=False

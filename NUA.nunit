@@ -1,0 +1,8 @@
+﻿<NUnitProject>
+  <Settings activeconfig="Debug" />
+  <Config name="Debug" binpathtype="Auto">
+    <assembly path="NewUserAdds\bin\Release\New User Adds.exe" />
+    <assembly path="NewUserAdds\bin\Debug\New User Adds.exe" />
+  </Config>
+  <Config name="Release" binpathtype="Auto" />
+</NUnitProject>

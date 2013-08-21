@@ -391,6 +391,43 @@ namespace NewUserAdds
             }
         }
 
+        
+
+        public void cpiExceptions(List<Person> cpiList)
+        {
+            NotesDatabase cpiDB = _notesSession.GetDatabase("fhs7.axolotl.com", "ea/administration.nsf");
+            NotesView byTemplate = cpiDB.GetView("Active Policies\\By Template");
+
+            foreach (Person p in cpiList)
+            {
+                NotesDocument document = byTemplate.GetDocumentByKey("EA CPI");
+                Char lastInit = p.LastName[0];
+                while (null != document && (document.ColumnValues as Object[])[0].ToString().Equals("EA CPI"))
+                {
+                    if (typeof(Object[]) == (document.ColumnValues as Object[])[1].GetType())
+                    {
+                        String[] colName = ((document.ColumnValues as Object[])[1] as Object[])[0].ToString().Split(' ');
+                        if (lastInit == colName[colName.Length - 1][0]) break;
+                    }
+
+                    document = byTemplate.GetNextDocument(document);
+                }
+
+                if (null != document && (document.ColumnValues as Object[])[0].ToString().Equals("EA CPI"))
+                {
+                    Object[] cpiNames = document.GetItemValue("UserName") as Object[];
+                    Array.Resize(ref cpiNames, cpiNames.Length + 1);
+                    cpiNames[cpiNames.Length - 1] = p.FullName;
+                    document.ReplaceItemValue("UserName", cpiNames);
+                    document.Save(false, false);
+                }
+                else
+                {
+                    MessageBox.Show("Error adding " + p.FullName + " to CPI Exception List");
+                }
+            }
+        }
+
         #endregion
     }
 }

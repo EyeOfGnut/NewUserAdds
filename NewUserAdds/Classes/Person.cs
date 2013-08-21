@@ -86,6 +86,16 @@ namespace NewUserAdds
             }
         }
 
+        public string FullName
+        {
+            get {
+                if(String.IsNullOrEmpty(_middleInitial))
+                    return _firstName + ' ' + _lastName;
+                else
+                    return _firstName + ' ' + _middleInitial + ' ' + _lastName;
+            }
+        }
+
 
         /// <summary>Dr, Prof, Mr, Mrs, Ms, etc</summary>
         public string Title; // Dr., Prof, Mr, Mrs, Ms, etc

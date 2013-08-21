@@ -4,6 +4,7 @@ using System.IO;
 using System.Windows.Forms;
 using System.Diagnostics;
 using System.ComponentModel;
+using System.Collections.Generic;
 
 namespace NewUserAdds
 {
@@ -113,13 +114,12 @@ namespace NewUserAdds
             }
 
             this.Invoke(new Action(() => updatePB("Writing to Log")));
-
             Utils.addAuditInfo(pList);
+
             this.Invoke(new Action(() => updatePB("Writing CSV file")));
             expCount = Utils.writeCSV(pList, csvFile, false);
 
             this.Invoke(new Action(() => updatePB("Importing CSV into Notes")));
-
             this.Invoke(new Action(() =>
                 {
                     notesConnection.ImportCSV();
@@ -133,7 +133,6 @@ namespace NewUserAdds
             // Check and see if there are any non-Fax accounts. If so, show the Emails button.
             // Otherwise, all the new accounts are Fax only, and there's nobody to send an email to
             this.Invoke(new Action(() => updatePB("Checking for VHR/EW accounts")));
-
             foreach (Person person in pList)
             {
                 if (!person.Fax)
@@ -150,6 +149,14 @@ namespace NewUserAdds
             }
 
             this.Invoke(new Action(() => updatePB("Exported " + expCount.ToString() + " users to Lotus Notes.")));
+
+            // Add to CPI list, if needed
+            List<Person> cpiList = CPIUsers();
+            if (cpiList.Count > 0)
+            {
+                this.Invoke(new Action(() => updatePB("Adding " + cpiList.Count + " CPI Excpetions...")));
+                this.Invoke(new Action(() => notesConnection.cpiExceptions(cpiList)));
+            }
 
             if (aa) this.Invoke((MethodInvoker)(()=>startAfterActions()));
         }
@@ -266,6 +273,19 @@ namespace NewUserAdds
         private void expUsers_Click(object sender, EventArgs e)
         {
             bgWorker.RunWorkerAsync();
+        }
+
+        private List<Person> CPIUsers()
+        {
+            List<Person> cpiList = new List<Person>();
+            foreach (Person p in pList)
+            {
+                if (p.Internal && !p.Fax && !p.JobCategory.Equals("Staff-I"))
+                {
+                    cpiList.Add(p);
+                }
+            }
+            return cpiList;
         }
 
         private void startAfterActions()

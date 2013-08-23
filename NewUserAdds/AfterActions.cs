@@ -104,11 +104,11 @@ namespace NewUserAdds
                     // Community users don't get anything that requires after-add actions.
                     if (p.Internal)
                     {
-                        // CPI Exception for LHP and Provider
-                        if (!p.JobCategory.Equals("Staff-I"))
+                        // CPI Exception for LHP and Provider - not needed since addition of automatic CPI addition
+                        /*if (!p.JobCategory.Equals("Staff-I"))
                         {
                             toDoList.Add(new ToDo(Categories.CPI_Exception, _GenDisplayName(p), (String.IsNullOrEmpty(p.Location) ? p.CompanyName : p.Location)));
-                        }
+                        }*/
 
                         // Add to Ordering Catalog
                         if (p.Ordering)
@@ -150,12 +150,13 @@ namespace NewUserAdds
 
             switch (td.CatEnum)
             {
-                case Categories.CPI_Exception:
+                    //Don't need this case anymore, since the addition of automatic CPI addition.
+               /* case Categories.CPI_Exception:
                     e.Text = "Add user to the CPI Exception policy in ea\\administration.nsf\n";
                     e.IsBalloon = true;
                     e.StandardIcon = ToolTipControl.StandardIcons.Info;
                     e.Title = "'Break the Glass' Excpetion";
-                    break;
+                    break;*/
                 case Categories.Fax:
                     e.Text = "Run the 'Set Fax' agent on the account.\nThere is a button for this on the Elysium Users view, or" +
                         " use 'Actions->Other', then select 'Set Fax Address LD'\n\n";

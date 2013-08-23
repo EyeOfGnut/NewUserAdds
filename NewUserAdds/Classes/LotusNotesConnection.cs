@@ -392,7 +392,10 @@ namespace NewUserAdds
         }
 
         
-
+        /// <summary>
+        /// Add the user names to the Break-the-Glass policy
+        /// </summary>
+        /// <param name="cpiList">List of Person objects, representing the users to add to the CPI policy</param>
         public void cpiExceptions(List<Person> cpiList)
         {
             NotesDatabase cpiDB = _notesSession.GetDatabase("fhs7.axolotl.com", "ea/administration.nsf");

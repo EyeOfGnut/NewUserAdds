@@ -86,6 +86,9 @@ namespace NewUserAdds
             }
         }
 
+        /// <summary>
+        /// Piece together the user's F, MI, and L names in to a single string.
+        /// </summary>
         public string FullName
         {
             get {
